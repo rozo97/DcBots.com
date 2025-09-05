@@ -125,13 +125,26 @@ body {
   color: #23272a;
 }
 
-/* Shop grid verticale layout */
+/* Shop grid: 3 per rij op desktop, responsive */
 .shop-grid {
-  display: flex;
-  flex-direction: column; /* onder elkaar */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 kolommen */
   gap: 20px;
-  max-width: 600px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (max-width: 992px) {
+  .shop-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 kolommen op tablet */
+  }
+}
+
+@media (max-width: 600px) {
+  .shop-grid {
+    grid-template-columns: 1fr; /* 1 kolom op mobiel */
+  }
 }
 
 .product-card {
@@ -256,8 +269,6 @@ footer {
     flex-direction: column;
     gap: 10px;
   }
-
-  .shop-grid {
-    max-width: 100%;
-  }
 }
+
+
