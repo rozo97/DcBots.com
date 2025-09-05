@@ -144,3 +144,40 @@ footer {
   color: #fff;
   margin-top: 50px;
 }
+
+/* About page */
+.about-page {
+  padding: 60px 20px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+.about-page h1 {
+  margin-bottom: 20px;
+}
+.about-page p {
+  margin-bottom: 40px;
+  font-size: 1.1em;
+  color: #444;
+}
+.about-team {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.team-member {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 220px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+.team-member img {
+  width: 100%;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+.team-member h2 {
+  margin-bottom: 5px;
+}
