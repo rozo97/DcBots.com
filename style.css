@@ -5,83 +5,106 @@
   box-sizing: border-box;
 }
 
-/* Algemene stijl */
-body {
+/* Basis stijl */
+html, body {
+  height: 100%;
   font-family: "Segoe UI", Arial, sans-serif;
-  background: #f5f5f5;
+  background-color: #f5f5f5;
   color: #222;
-  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Navigatie */
+body {
+  flex: 1;
+}
+
+/* NAVBAR */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 10%;
   background: #5865f2; /* Discord paars */
+  color: #fff;
+  padding: 15px 10%;
 }
+
 .navbar .logo {
   font-size: 1.5em;
   font-weight: bold;
-  color: #fff;
 }
-.navbar .nav-links {
+
+.nav-links {
   list-style: none;
   display: flex;
   gap: 20px;
 }
-.navbar .nav-links a {
-  text-decoration: none;
+
+.nav-links li a {
   color: #fff;
+  text-decoration: none;
+  font-weight: 500;
   transition: 0.3s;
 }
-.navbar .nav-links a:hover {
+
+.nav-links li a:hover {
   color: #d4d8ff;
 }
 
-/* Hero */
+/* HERO */
 .hero {
   text-align: center;
   padding: 120px 20px;
   background: linear-gradient(135deg, #5865f2, #404eed);
-  color: white;
+  color: #fff;
 }
+
 .hero h1 {
   font-size: 2.8em;
   margin-bottom: 15px;
 }
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 25px;
+}
+
 .hero .btn {
   display: inline-block;
-  margin-top: 20px;
   padding: 14px 30px;
-  background: white;
+  background: #fff;
   color: #5865f2;
   border-radius: 30px;
   font-weight: bold;
   text-decoration: none;
   transition: 0.3s;
 }
+
 .hero .btn:hover {
   background: #d4d8ff;
   color: #222;
 }
 
-/* About sectie */
+/* ABOUT GRID (Homepagina “Why Choose Us”) */
 .about {
   padding: 60px 20px;
   text-align: center;
   background: #fff;
 }
+
 .about h2 {
   margin-bottom: 20px;
+  font-size: 28px;
+  color: #23272a;
 }
+
 .about-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
   margin-top: 20px;
 }
+
 .about-card {
   background: #f0f2ff;
   padding: 25px;
@@ -90,130 +113,102 @@ body {
   color: #404eed;
 }
 
-/* Shop */
+/* SHOP SECTION */
 .shop {
   padding: 60px 20px;
   text-align: center;
 }
+
 .shop h1 {
   margin-bottom: 30px;
+  font-size: 28px;
+  color: #23272a;
 }
+
+/* Shop grid verticale layout */
 .shop-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
+  display: flex;
+  flex-direction: column; /* onder elkaar */
+  gap: 20px;
+  max-width: 600px;
+  margin: 0 auto;
 }
+
 .product-card {
   background: #fff;
-  padding: 25px;
+  padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  transition: transform 0.2s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 .product-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
 }
+
 .product-card img {
-  width: 100%;
-  max-height: 150px;
-  object-fit: contain;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 12px;
   margin-bottom: 15px;
+  border: 2px solid #5865f2;
 }
+
 .product-card h2 {
   margin-bottom: 10px;
+  font-size: 20px;
+  color: #23272a;
 }
+
+.product-card p {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: #555;
+}
+
 .order-btn {
   display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
   background: #5865f2;
   color: #fff;
+  padding: 10px 18px;
   border-radius: 8px;
   text-decoration: none;
+  font-weight: bold;
   transition: 0.3s;
 }
+
 .order-btn:hover {
   background: #404eed;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #5865f2;
-  color: #fff;
-  margin-top: 50px;
-}
-
-/* About page */
+/* ABOUT US PAGE */
 .about-page {
   padding: 60px 20px;
   max-width: 900px;
   margin: auto;
   text-align: center;
 }
+
 .about-page h1 {
   margin-bottom: 20px;
 }
+
 .about-page p {
   margin-bottom: 40px;
   font-size: 1.1em;
   color: #444;
 }
+
 .about-team {
   display: flex;
   justify-content: center;
   gap: 40px;
   flex-wrap: wrap;
 }
-.team-member {
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  width: 220px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-}
-.team-member img {
-  width: 100%;
-  border-radius: 50%;
-  margin-bottom: 15px;
-}
-.team-member h2 {
-  margin-bottom: 5px;
-}
 
-/* Make sure footer stays at bottom */
-html, body {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  flex: 1; /* duwt footer naar beneden */
-}
-
-/* About page */
-.about-page {
-  padding: 60px 20px;
-  max-width: 900px;
-  margin: auto;
-  text-align: center;
-}
-.about-page h1 {
-  margin-bottom: 20px;
-}
-.about-page p {
-  margin-bottom: 40px;
-  font-size: 1.1em;
-  color: #444;
-}
-.about-team {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-}
 .team-member {
   background: #fff;
   padding: 20px;
@@ -222,9 +217,11 @@ main {
   box-shadow: 0 4px 15px rgba(0,0,0,0.08);
   transition: transform 0.2s;
 }
+
 .team-member:hover {
   transform: translateY(-5px);
 }
+
 .team-member img {
   width: 120px;
   height: 120px;
@@ -233,15 +230,34 @@ main {
   margin-bottom: 15px;
   border: 3px solid #5865f2;
 }
+
 .team-member h2 {
   margin-bottom: 5px;
 }
 
-/* Footer */
+/* FOOTER altijd onderaan */
 footer {
-  text-align: center;
-  padding: 20px;
   background: #5865f2;
   color: #fff;
-  margin-top: auto; /* belangrijk om altijd onderaan te blijven */
+  text-align: center;
+  padding: 15px;
+  margin-top: auto;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .about-team, .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .shop-grid {
+    max-width: 100%;
+  }
 }
